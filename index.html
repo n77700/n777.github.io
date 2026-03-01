@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Favicon.png" type="image/png">
-    <title>.n777</title>
-  </head>
-  <body>
-    
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open .n777 In 'about: blank'</title>
+  <link rel="icon" href="Images/Favicon.png" type="image/png">
+  <link rel="stylesheet" href='index.style.css'>
+</head>
+<body id="indexBody">
+  <h1 id="MainText">.n777</h1>
+  
+  <button onclick="testOpen()" id="Button">Open .n777</button>
+  <br>
+  <p id="Stamp">.n777</p>
+
+  <script>
+    function testOpen() {
+      const win = window.open('about:blank', '_blank');
+      
+      if (!win) {
+        alert("Popup blocked - allow popups and try again");
+        return;
+      }
+      
+      win.document.open();
+      win.document.write('<iframe src="n777.html" style="width: 100%; height: 100%;">');
+      win.document.close();
+      win.focus();
+    }
+  </script>
+</body>
 </html>
